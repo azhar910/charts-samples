@@ -146,7 +146,37 @@
               1500, 2200, 1800, 2400, 1900, 2000, 2300, 2100, 2400, 2600, 2700,
               2800,
             ],
-            dashStyle: 'Dash'
+            dashStyle: "Dash",
+          },
+        ],
+      });
+    </script>
+
+    <div id="chart-container2"></div>
+    <script>
+      Highcharts.chart("chart-container2", {
+        title: {
+          text: "Temperature over Time",
+        },
+        xAxis: {
+          type: "datetime",
+        },
+        yAxis: {
+          title: {
+            text: "Temperature (°F)",
+          },
+        },
+        series: [
+          {
+            name: "Temperature",
+            data: [
+              [1621418400000, 70.1],
+              [1621422000000, 72.3],
+              [1621425600000, 73.8],
+              [1621429200000, 75.4],
+              [1621432800000, 73.2],
+              [1621436400000, 71.5],
+            ],
           },
         ],
       });
