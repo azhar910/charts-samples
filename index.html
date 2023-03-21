@@ -181,5 +181,341 @@
         ],
       });
     </script>
+
+    <div id="chart-container3"></div>
+    <script>
+      Highcharts.chart("chart-container3", {
+        chart: {
+          type: "column",
+        },
+        title: {
+          text: "World's largest cities per 2021",
+        },
+        subtitle: {
+          text: 'Source: <a href="https://worldpopulationreview.com/world-cities" target="_blank">World Population Review</a>',
+        },
+        xAxis: {
+          type: "category",
+          labels: {
+            rotation: -45,
+            style: {
+              fontSize: "13px",
+              fontFamily: "Verdana, sans-serif",
+            },
+          },
+        },
+        yAxis: {
+          min: 0,
+          title: {
+            text: "Population (millions)",
+          },
+        },
+        legend: {
+          enabled: false,
+        },
+        tooltip: {
+          pointFormat: "Population in 2021: <b>{point.y:.1f} millions</b>",
+        },
+        series: [
+          {
+            name: "Population",
+            data: [
+              ["Tokyo", 37.33],
+              ["Delhi", 31.18],
+              ["Shanghai", 27.79],
+              ["Sao Paulo", 22.23],
+              ["Mexico City", 21.91],
+              ["Dhaka", 21.74],
+              ["Cairo", 21.32],
+              ["Beijing", 20.89],
+              ["Mumbai", 20.67],
+              ["Osaka", 19.11],
+              ["Karachi", 16.45],
+              ["Chongqing", 16.38],
+              ["Istanbul", 15.41],
+              ["Buenos Aires", 15.25],
+              ["Kolkata", 14.974],
+              ["Kinshasa", 14.97],
+              ["Lagos", 14.86],
+              ["Manila", 14.16],
+              ["Tianjin", 13.79],
+              ["Guangzhou", 13.64],
+            ],
+            dataLabels: {
+              enabled: true,
+              rotation: -90,
+              color: "#FFFFFF",
+              align: "right",
+              format: "{point.y:.1f}", // one decimal
+              y: 10, // 10 pixels down from the top
+              style: {
+                fontSize: "13px",
+                fontFamily: "Verdana, sans-serif",
+              },
+            },
+          },
+        ],
+      });
+    </script>
+    <div id="container4"></div>
+    <script>
+      Highcharts.chart("container4", {
+        chart: {
+          type: "pie",
+        },
+        title: {
+          text: "Pie Chart with Number in Between",
+        },
+        series: [
+          {
+            name: "Data",
+            data: [
+              { name: "Slice 1", y: 20 },
+              { name: "Slice 2", y: 30 },
+              { name: "Slice 3", y: 50 },
+            ],
+            dataLabels: {
+              enabled: true,
+              format: "{point.y}<br>{point.percentage:.1f}%",
+            },
+          },
+        ],
+      });
+    </script>
+
+    <div id="container5"></div>
+    <script>
+      Highcharts.chart("container5", {
+        chart: {
+          type: "area",
+        },
+        title: {
+          text: "Uptime and Downtime Chart",
+        },
+        xAxis: {
+          categories: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+          ],
+        },
+        yAxis: {
+          title: {
+            text: "Time (hours)",
+          },
+        },
+        plotOptions: {
+          area: {
+            stacking: "normal",
+            lineColor: "#666666",
+            lineWidth: 1,
+            marker: {
+              lineWidth: 1,
+              lineColor: "#666666",
+            },
+          },
+        },
+        series: [
+          {
+            name: "Uptime",
+            data: [8, 7, 9, 8, 8, 10, 10],
+            color: "#7cb5ec",
+          },
+          {
+            name: "Downtime",
+            data: [0.5, 1, 0, 1.5, 1, 0, 0],
+            color: "#f7a35c",
+          },
+        ],
+      });
+    </script>
+    <!--HERE DETECTIONS-->
+    <div id="container6"></div>
+    <script>
+      Highcharts.chart("container6", {
+        chart: {
+          type: "column",
+        },
+        title: {
+          text: "Number of Detections",
+        },
+        xAxis: {
+          categories: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+          ],
+        },
+        yAxis: {
+          title: {
+            text: "Number of Detections",
+          },
+        },
+        series: [
+          {
+            name: "24 hr",
+            data: [10, 20, 15, 25, 30, 40, 35],
+          },
+          {
+            name: "7 days",
+            data: [50, 60, 55, 70, 80, 100, 90],
+          },
+          {
+            name: "30 days",
+            data: [200, 250, 220, 280, 300, 400, 350],
+          },
+        ],
+      });
+    </script>
+
+    <div id="container7"></div>
+    <script>
+      Highcharts.chart("container7", {
+        chart: {
+          type: "line",
+        },
+        title: {
+          text: "% of Unmatched Detections",
+        },
+        xAxis: {
+          categories: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+          ],
+        },
+        yAxis: {
+          title: {
+            text: "% of Unmatched Detections",
+          },
+          min: 0,
+          max: 100,
+        },
+        series: [
+          {
+            name: "24 hr",
+            data: [20, 30, 25, 35, 40, 50, 45],
+          },
+          {
+            name: "7 days",
+            data: [30, 40, 35, 50, 60, 70, 65],
+          },
+          {
+            name: "30 days",
+            data: [40, 50, 45, 60, 70, 80, 75],
+          },
+        ],
+      });
+    </script>
+
+    <div id="container8"></div>
+    <script>
+      Highcharts.chart("container8", {
+        chart: {
+          type: "line",
+        },
+        title: {
+          text: "Average Detections per Device",
+        },
+        xAxis: {
+          categories: [
+            "Device 1",
+            "Device 2",
+            "Device 3",
+            "Device 4",
+            "Device 5",
+          ],
+        },
+        yAxis: {
+          title: {
+            text: "Number of Detections",
+          },
+        },
+        series: [
+          {
+            name: "Last 5 mins",
+            data: [50, 60, 55, 70, 80],
+          },
+        ],
+      });
+    </script>
+
+    <div id="container9"></div>
+    <script>
+      Highcharts.chart("container9", {
+        chart: {
+          type: "column",
+        },
+        title: {
+          text: "Busiest Devices",
+        },
+        xAxis: {
+          categories: [
+            "Device 1",
+            "Device 2",
+            "Device 3",
+            "Device 4",
+            "Device 5",
+          ],
+        },
+        yAxis: {
+          title: {
+            text: "Number of Detections",
+          },
+        },
+        series: [
+          {
+            name: "Number of Detections",
+            data: [200, 180, 150, 140, 120],
+          },
+        ],
+      });
+    </script>
+
+    <div id="container10"></div>
+    <script>
+      Highcharts.chart("container10", {
+        chart: {
+          type: "column",
+        },
+        title: {
+          text: "Least Busy Devices",
+        },
+        xAxis: {
+          categories: [
+            "Device 1",
+            "Device 2",
+            "Device 3",
+            "Device 4",
+            "Device 5",
+          ],
+        },
+        yAxis: {
+          title: {
+            text: "Number of Detections",
+          },
+        },
+        series: [
+          {
+            name: "Number of Detections",
+            data: [20, 30, 35, 40, 50],
+          },
+        ],
+      });
+    </script>
+
+    
   </body>
 </html>

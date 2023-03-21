@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <title>HighCharts Examples</title>
+  <head>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  </head>
+
+  <body>
+    <div id="container"></div>
+    <div id="container1"></div>
+    <div id="container2"></div>
+    <div id="container3"></div>
+    <div id="container4"></div>
+    <div id="container5"></div>
+    <script>
+      // Define the data arrays
+      var matchesData = [
+        [1635035400000, 45],
+        [1635035460000, 60],
+        [1635035520000, 72],
+        // more data points
+      ];
+
+      var travelTimeData = [
+        [1635035400000, 15],
+        [1635035460000, 18],
+        [1635035520000, 14],
+        // more data points
+      ];
+
+      var speedData = [
+        [1635035400000, 30],
+        [1635035460000, 25],
+        [1635035520000, 35],
+        // more data points
+      ];
+
+      var trendlineData = [
+        [1635035400000, 55],
+        [1635035460000, 58],
+        [1635035520000, 62],
+        // more data points
+      ];
+
+      // Create a new Highchart object
+      Highcharts.chart("container", {
+        // Set the chart type to line
+        chart: {
+          type: "line",
+        },
+
+        // Set the chart title
+        title: {
+          text: "Matches per Minute (Real-Time)",
+        },
+
+        // Set the x-axis labels
+        xAxis: {
+          title: {
+            text: "Time",
+          },
+        },
+
+        // Set the y-axis labels
+        yAxis: [
+          {
+            title: {
+              text: "Matches",
+            },
+          },
+          {
+            title: {
+              text: "Speed",
+            },
+            opposite: true,
+          },
+        ],
+
+        // Set the tooltip format
+        tooltip: {
+          shared: true,
+          crosshairs: true,
+          valueSuffix: "matches",
+        },
+
+        // Set the data series
+        series: [
+          {
+            name: "Matches per Minute",
+            data: matchesData,
+          },
+          {
+            name: "Average Travel Time",
+            data: travelTimeData,
+          },
+          {
+            name: "Smoothed Speed",
+            data: speedData,
+            yAxis: 1,
+          },
+          {
+            name: "Comparison Trendline",
+            data: trendlineData,
+            dashStyle: "longdash",
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+  <title>HighCharts Examples</title>
+  <head>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  </head>
+
+  <body>
+    <div id="container"></div>
+    <div id="container1"></div>
+    <div id="container2"></div>
+    <div id="container3"></div>
+    <div id="container4"></div>
+    <div id="container5"></div>
+    <script>
+      // Uptime Progress Dials
+      Highcharts.chart("container", {
+        chart: {
+          type: "solidgauge",
+          height: "110%",
+        },
+        title: {
+          text: "Uptime %",
+        },
+        tooltip: {
+          enabled: false,
+        },
+        pane: {
+          startAngle: -90,
+          endAngle: 90,
+          background: {
+            backgroundColor:
+              Highcharts.defaultOptions.legend.backgroundColor || "#EEE",
+            innerRadius: "60%",
+            outerRadius: "100%",
+            shape: "arc",
+          },
+        },
+        yAxis: {
+          stops: [
+            [0.1, "#DF5353"], // red
+            [0.5, "#DDDF0D"], // yellow
+            [0.9, "#55BF3B"], // green
+          ],
+          lineWidth: 0,
+          tickWidth: 0,
+          minorTickInterval: null,
+          tickAmount: 2,
+          title: {
+            y: -70,
+          },
+          labels: {
+            y: 16,
+          },
+        },
+        plotOptions: {
+          solidgauge: {
+            dataLabels: {
+              y: 5,
+              borderWidth: 0,
+              useHTML: true,
+            },
+          },
+        },
+        series: [
+          {
+            name: "Uptime % (real-time)",
+            data: [80],
+            dataLabels: {
+              format:
+                '<div style="text-align:center">' +
+                '<span style="font-size:25px">{y}</span><br/>' +
+                '<span style="font-size:12px;opacity:0.4">%</span>' +
+                "</div>",
+            },
+          },
+        ],
+      });
+
+      Highcharts.chart("container2", {
+        chart: {
+          type: "solidgauge",
+          height: "110%",
+        },
+        title: {
+          text: "Uptime % (last 24 hrs)",
+        },
+        tooltip: {
+          enabled: false,
+        },
+        pane: {
+          startAngle: -90,
+          endAngle: 90,
+          background: {
+            backgroundColor:
+              Highcharts.defaultOptions.legend.backgroundColor || "#EEE",
+            innerRadius: "60%",
+            outerRadius: "100%",
+            shape: "arc",
+          },
+        },
+        yAxis: {
+          stops: [
+            [0.1, "#DF5353"], // red
+            [0.5, "#DDDF0D"], // yellow
+            [0.9, "#55BF3B"], // green
+          ],
+          lineWidth: 0,
+          tickWidth: 0,
+          minorTickInterval: null,
+          tickAmount: 2,
+          title: {
+            y: -70,
+          },
+          labels: {
+            y: 16,
+          },
+        },
+        plotOptions: {
+          solidgauge: {
+            dataLabels: {
+              y: 5,
+              borderWidth: 0,
+              useHTML: true,
+            },
+          },
+        },
+        series: [
+          {
+            name: "Uptime % (last 24 hrs)",
+            data: [85],
+            dataLabels: {
+              format:
+                '<div style="text-align:center">' +
+                '<span style="font-size:25px">{y}</span><br/>' +
+                '<span style="font-size:12px;opacity:0.4">%</span>' +
+                "</div>",
+            },
+          },
+        ],
+      });
+
+      Highcharts.chart("container3", {
+        chart: {
+          type: "solidgauge",
+          height: "110%",
+        },
+        title: {
+          text: "Uptime % (last 30 days)",
+        },
+        tooltip: {
+          enabled: false,
+        },
+        pane: {
+          startAngle: -90,
+          endAngle: 90,
+          background: {
+            backgroundColor:
+              Highcharts.defaultOptions.legend.backgroundColor || "#EEE",
+            innerRadius: "60%",
+            outerRadius: "100%",
+            shape: "arc",
+          },
+        },
+        yAxis: {
+          stops: [
+            [0.1, "#DF5353"], // red
+            [0.5, "#DDDF0D"], // yellow
+            [0.9, "#55BF3B"], // green
+          ],
+          lineWidth: 0,
+          tickWidth: 0,
+          minorTickInterval: null,
+          tickAmount: 2,
+          title: {
+            y: -70,
+          },
+          labels: {
+            y: 16,
+          },
+        },
+        plotOptions: {
+          solidgauge: {
+            dataLabels: {
+              y: 5,
+              borderWidth: 0,
+              useHTML: true,
+            },
+          },
+        },
+        series: [
+          {
+            name: "Uptime % (last 30 days)",
+            data: [90],
+            dataLabels: {
+              format:
+                '<div style="text-align:center">' +
+                '<span style="font-size:25px">{y}</span><br/>' +
+                '<span style="font-size:12px;opacity:0.4">%</span>' +
+                "</div>",
+            },
+          },
+        ],
+      });
+
+      // Online/Offline Devices
+      Highcharts.chart("container4", {
+        chart: {
+          type: "column",
+        },
+        title: {
+          text: "Online/Offline Devices",
+        },
+        xAxis: {
+          categories: [
+            "Device 1",
+            "Device 2",
+            "Device 3",
+            "Device 4",
+            "Device 5",
+          ],
+        },
+        yAxis: {
+          min: 0,
+          title: {
+            text: "Number of Devices",
+          },
+          stackLabels: {
+            enabled: true,
+            style: {
+              fontWeight: "bold",
+              color:
+                (Highcharts.defaultOptions.title.style &&
+                  Highcharts.defaultOptions.title.style.color) ||
+                "gray",
+            },
+          },
+        },
+        legend: {
+          align: "right",
+          x: -30,
+          verticalAlign: "top",
+          y: 25,
+          floating: true,
+          backgroundColor:
+            Highcharts.defaultOptions.legend.backgroundColor || "white",
+          borderColor: "#CCC",
+          borderWidth: 1,
+          shadow: false,
+        },
+        tooltip: {
+          headerFormat: "<b>{point.x}</b><br/>",
+          pointFormat: "{series.name}: {point.y}<br/>Total: {point.stackTotal}",
+        },
+        plotOptions: {
+          column: {
+            stacking: "normal",
+            dataLabels: {
+              enabled: true,
+            },
+          },
+        },
+        series: [
+          {
+            name: "Online",
+            data: [4, 3, 5, 2, 6],
+          },
+          {
+            name: "Offline",
+            data: [1, 2, 0, 3, 0],
+          },
+        ],
+      });
+
+      // Busiest/Least Busy Devices
+      Highcharts.chart("container5", {
+        chart: {
+          type: "bar",
+        },
+        title: {
+          text: "Busiest/Least Busy Devices",
+        },
+        xAxis: {
+          categories: [
+            "Device 1",
+            "Device 2",
+            "Device 3",
+            "Device 4",
+            "Device 5",
+          ],
+          title: {
+            text: null,
+          },
+          labels: {
+            overflow: "justify",
+          },
+        },
+        yAxis: {
+          min: 0,
+          title: {
+            text: "Number of Heartbeats",
+          },
+        },
+        tooltip: {
+          valueSuffix: " heartbeats",
+        },
+        plotOptions: {
+          bar: {
+            dataLabels: {
+              enabled: true,
+            },
+          },
+        },
+        legend: {
+          layout: "vertical",
+          align: "right",
+          verticalAlign: "top",
+          x: -40,
+          y: 100,
+          floating: true,
+          borderWidth: 1,
+          backgroundColor:
+            Highcharts.defaultOptions.legend.backgroundColor || "#FFF",
+          shadow: true,
+        },
+        credits: {
+          enabled: false,
+        },
+        series: [
+          {
+            name: "Heartbeats",
+            data: [200, 140, 170, 90, 110],
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>
